@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">The World\'s Mood</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_how_are_you_feeling_today_">Hello, how are you feeling today?</string>
+    <string name="click_anywhere_or_swipe_left_to_continue_">Click anywhere or swipe left to continue.</string>
+    <color name="front">#87A020</color>
+    <color name="ms1">#3A3F3D</color>
+    <string name="title">title</string>
+</resources>
