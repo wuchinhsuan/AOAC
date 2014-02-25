@@ -1,5 +1,7 @@
 package com.chw323.theworldsmoond;
 
+import java.util.List;
+
 import com.chw323.theworldsmoond.R;
 
 import android.annotation.SuppressLint;
@@ -41,9 +43,12 @@ public class MoodMap extends FragmentActivity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.moodmap);
-		map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+			map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
-		ParseAnalytics.trackAppOpened(getIntent());
+			ParseAnalytics.trackAppOpened(getIntent());
+			
+			loadData();
+		
 		
 		
 		mmButton1=(Button) findViewById(R.id.mm_button1);
@@ -90,5 +95,34 @@ public class MoodMap extends FragmentActivity implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public void loadData(){
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("mood");
+		
+		query.findInBackground(new FindCallback<ParseObject>() {
+		  
+
+		@Override
+		public void done(List<ParseObject> objects, ParseException e) {
+			// TODO Auto-generated method stub
+			if (e == null) {
+				 for (int i = 0; i < objects.size(); i++) {
+					 ParseObject moodObject=objects.get(i);
+					String moodString= moodObject.getString("mood");
+					Double latValueDouble=Double.parseDouble(moodObject.getString("lat"));
+					Double lonValueDouble=Double.parseDouble(moodObject.getString("lon"));
+					LatLng posLatLng = new LatLng(latValueDouble, lonValueDouble);
+					 
+					 Marker moodMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString));
+					 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
+				 }
+	        } else {
+	            
+	        }
+			
+		}
+		});
+
 	}
 }
