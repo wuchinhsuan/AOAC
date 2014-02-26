@@ -74,7 +74,6 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 		
 		
 	    final View view1 = inflater.inflate(R.layout.moodselection1, null);//
-	    final View view2 = inflater.inflate(R.layout.moodselection2, null);//
 		setContentView(R.layout.moodselection1);
 		
 		myButtonG=(ImageButton) findViewById(R.id.ms_button1);
