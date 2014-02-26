@@ -33,17 +33,9 @@ import android.widget.TextView;
 
 public class MoodSelection1 extends Activity implements OnClickListener{
 	ImageButton myButtonG;
-	ImageButton myButtonB;
-	ImageButton myButtonO;
-	Button mdButton1;
-	Button mdButton2;
-	Button mdButton3;
-	Button mdButton4;
-	Button mdButton5;
-	Button mdButton6;
-	Button mdButton7;
-	Button mdButton8;
-	Button mdButton9;
+	ImageButton myButtonS;
+	ImageButton myButtonN;
+	ImageButton myButtonM;
     private Context mContext;
     private double currentLat;
     private double currentLon;
@@ -86,26 +78,19 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 		setContentView(R.layout.moodselection1);
 		
 		myButtonG=(ImageButton) findViewById(R.id.ms_button1);
-		myButtonB=(ImageButton) findViewById(R.id.ms_button2);
-		myButtonO=(ImageButton) findViewById(R.id.ms_button3);
-		mdButton1=(Button) view2.findViewById(R.id.ms2_button1);
-		mdButton2=(Button) view2.findViewById(R.id.ms2_button2);
-		mdButton3=(Button) view2.findViewById(R.id.ms2_button3);
-		mdButton4=(Button) view2.findViewById(R.id.ms2_button4);
-		mdButton5=(Button) view2.findViewById(R.id.ms2_button5);
-		mdButton6=(Button) view2.findViewById(R.id.ms2_button6);
-		mdButton7=(Button) view2.findViewById(R.id.ms2_button7);
-		mdButton8=(Button) view2.findViewById(R.id.ms2_button8);
-		mdButton9=(Button) view2.findViewById(R.id.ms2_button9);
+		myButtonS=(ImageButton) findViewById(R.id.ms_button2);
+		myButtonN=(ImageButton) findViewById(R.id.ms_button3);
+		myButtonM=(ImageButton) findViewById(R.id.ms_button4);
+
 		
 		myButtonG.setOnClickListener(
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
 						  ParseObject moodObject = new ParseObject("MoodObject");
-						  moodObject.put("mood", "great");
-							moodObject.put("lat",Double.toString(currentLat) );
-							moodObject.put("lon",Double.toString(currentLon) );
+						  moodObject.put("mood", "great!");
+						  moodObject.put("lat",Double.toString(currentLat) );
+						  moodObject.put("lon",Double.toString(currentLon) );
 						  moodObject.saveInBackground();	
 
 						Log.v("MainActivity", "Button Clicked");
@@ -117,14 +102,14 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 				  }
 				);
 		
-		myButtonB.setOnClickListener(
+		myButtonS.setOnClickListener(
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
 						  ParseObject moodObject = new ParseObject("MoodObject");
-						  moodObject.put("mood", "bad");
-							moodObject.put("lat",Double.toString(currentLat) );
-							moodObject.put("lon",Double.toString(currentLon) );
+						  moodObject.put("mood", "surprised!");
+						  moodObject.put("lat",Double.toString(currentLat) );
+						  moodObject.put("lon",Double.toString(currentLon) );
 						  moodObject.saveInBackground();
 						Log.v("MainActivity", "Button Clicked");
 						Intent i= new Intent(MoodSelection1.this, MoodView.class);
@@ -134,117 +119,39 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 				  }
 				);
 		
-		myButtonO.setOnClickListener(
+		myButtonN.setOnClickListener(
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
+						  ParseObject moodObject = new ParseObject("MoodObject");
+						  moodObject.put("mood", "nooo!");
+						  moodObject.put("lat",Double.toString(currentLat) );
+						  moodObject.put("lon",Double.toString(currentLon) );
+						  moodObject.saveInBackground();
 						Log.v("MainActivity", "Button Clicked");
-						setContentView(R.layout.moodselection2);
+						Intent i= new Intent(MoodSelection1.this, MoodView.class);
+						startActivity(i);
 						overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 					}
 				  }
 				);
 		
-		
-		mdButton1.setOnClickListener(
+		myButtonM.setOnClickListener(
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
+						  ParseObject moodObject = new ParseObject("MoodObject");
+						  moodObject.put("mood", "mixed");
+						  moodObject.put("lat",Double.toString(currentLat) );
+						  moodObject.put("lon",Double.toString(currentLon) );
+						  moodObject.saveInBackground();
 						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
+						Intent i= new Intent(MoodSelection1.this, MoodView.class);
 						startActivity(i);
+						overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 					}
 				  }
 				);
-		
-		mdButton2.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
-		mdButton3.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
-		mdButton4.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
-		mdButton5.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
-		mdButton6.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
-		mdButton7.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
-		mdButton8.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
-		mdButton9.setOnClickListener(
-				new OnClickListener(){
-					@Override
-					public void onClick(View arg0){
-						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
-						startActivity(i);
-					}
-				  }
-				);
-		
 	}
 
 	@Override
@@ -420,7 +327,10 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 	    public IBinder onBind(Intent arg0) {
 	        return null;
 	    }
+	    
 
 	}
-	
+	@Override
+	public void onBackPressed() {
+	}
 }

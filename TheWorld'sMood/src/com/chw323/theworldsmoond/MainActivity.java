@@ -64,7 +64,9 @@ public void onCreate() {
 	public void onClick(View clickedView) {
 			
 		}
-
+	@Override
+	public void onBackPressed() {
+	}
 	
 	
 @Override

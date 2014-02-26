@@ -49,9 +49,6 @@ public class MoodMap extends Activity implements OnClickListener{
 		
 		
 		
-		mmButton1=(Button) findViewById(R.id.mm_button1);
-		mmButton2=(Button) findViewById(R.id.mm_button2);
-		mmButton3=(Button) findViewById(R.id.mm_button3);
 		
 		mmButton1.setOnClickListener(
 				new OnClickListener(){

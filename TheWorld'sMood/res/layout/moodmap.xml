@@ -3,43 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:src="@drawable/map_title" />
+
     <fragment
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_above="@+id/map_button1"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageView1"
+        class="com.google.android.gms.maps.MapFragment" />
 
-        class="com.google.android.gms.maps.SupportMapFragment" />
-
-
-    <Button
-        android:id="@+id/mm_button1"
+    <ImageButton
+        android:id="@+id/map_button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="18dp"
-        android:layout_marginLeft="16dp"
-        android:text="Mood" />
-    
-        <Button
-        android:id="@+id/mm_button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/mm_button1"
-        android:layout_alignBottom="@+id/mm_button1"
-        android:layout_centerHorizontal="true"
-        android:text="Map" />
-
-    <Button
-        android:id="@+id/mm_button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/mm_button1"
-        android:layout_alignBottom="@+id/mm_button1"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="17dp"
-        android:text="List" />
-
-
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:src="@drawable/map_select" />
 
 </RelativeLayout>
