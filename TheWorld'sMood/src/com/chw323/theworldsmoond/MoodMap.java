@@ -30,21 +30,19 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 
-public class MoodMap extends FragmentActivity implements OnClickListener{
+public class MoodMap extends Activity implements OnClickListener{
 	Button mmButton1;
 	Button mmButton2;
 	Button mmButton3;
 	private GoogleMap map;
 
 	
-	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.moodmap);
-			map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
-
+        GoogleMap map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 			ParseAnalytics.trackAppOpened(getIntent());
 			
 			loadData();

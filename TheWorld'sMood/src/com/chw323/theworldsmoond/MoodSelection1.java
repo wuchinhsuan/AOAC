@@ -109,7 +109,7 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 						  moodObject.saveInBackground();	
 
 						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodMap.class);
+						Intent i= new Intent(MoodSelection1.this, MoodView.class);
 						startActivity(i);
 						overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
@@ -127,7 +127,7 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 							moodObject.put("lon",Double.toString(currentLon) );
 						  moodObject.saveInBackground();
 						Log.v("MainActivity", "Button Clicked");
-						Intent i= new Intent(MoodSelection1.this, MoodList.class);
+						Intent i= new Intent(MoodSelection1.this, MoodView.class);
 						startActivity(i);
 						overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 					}
