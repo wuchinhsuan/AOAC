@@ -35,6 +35,8 @@ public class MoodView extends Activity {
 		setContentView(R.layout.moodmap);
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		map.setMyLocationEnabled(true);
+		map.getUiSettings().setMyLocationButtonEnabled(true);
+		
 		try {
     		CameraUpdate center=
 			        CameraUpdateFactory.newLatLng(new LatLng(map.getMyLocation().getLatitude(),map.getMyLocation().getLongitude()));
