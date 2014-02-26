@@ -29,6 +29,7 @@ import com.parse.ParseQuery;
 public class MoodView extends Activity {
 	ImageButton myButtonM;
 	private GoogleMap map;
+	private Marker marker_great;
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -90,7 +91,8 @@ myButtonM=(ImageButton) findViewById(R.id.map_button1);
 					Double lonValueDouble=Double.parseDouble(moodObject.getString("lon"));
 					LatLng posLatLng = new LatLng(latValueDouble, lonValueDouble);
 					 
-					 Marker moodMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString));
+					 
+					//Marker moodMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString));
 					 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
 				 }
 	        } else {
@@ -100,6 +102,8 @@ myButtonM=(ImageButton) findViewById(R.id.map_button1);
 		}
 		});
 
+		
+		
 
 	}
 	@Override

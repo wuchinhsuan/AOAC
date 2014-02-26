@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/name_input"
+    android:gravity="center"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    
+    <View
+  android:layout_width="1dp"
+  android:layout_height="30dp">
+</View>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="170dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:adjustViewBounds="true"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        android:layout_marginTop="22dp"
+        android:src="@drawable/name_confirm" />
+        
+</LinearLayout>
