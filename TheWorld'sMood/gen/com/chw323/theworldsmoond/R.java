@@ -235,12 +235,20 @@ containing a value of this type.
         public static final int marker_nooo=0x7f020022;
         public static final int marker_surprised=0x7f020023;
         public static final int ms_great=0x7f020024;
-        public static final int ms_mixed=0x7f020025;
-        public static final int ms_nooo=0x7f020026;
-        public static final int ms_surprised=0x7f020027;
-        public static final int ms_title=0x7f020028;
-        public static final int name_confirm=0x7f020029;
-        public static final int name_input=0x7f02002a;
+        public static final int ms_great_n=0x7f020025;
+        public static final int ms_great_p=0x7f020026;
+        public static final int ms_mixed=0x7f020027;
+        public static final int ms_mixed_n=0x7f020028;
+        public static final int ms_mixed_p=0x7f020029;
+        public static final int ms_nooo=0x7f02002a;
+        public static final int ms_nooo_n=0x7f02002b;
+        public static final int ms_nooo_p=0x7f02002c;
+        public static final int ms_surprised=0x7f02002d;
+        public static final int ms_surprised_n=0x7f02002e;
+        public static final int ms_surprised_p=0x7f02002f;
+        public static final int ms_title=0x7f020030;
+        public static final int name_confirm=0x7f020031;
+        public static final int name_input=0x7f020032;
     }
     public static final class id {
         public static final int action_settings=0x7f06000e;
