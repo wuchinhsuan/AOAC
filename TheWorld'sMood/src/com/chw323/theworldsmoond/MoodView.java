@@ -16,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -29,7 +30,6 @@ import com.parse.ParseQuery;
 public class MoodView extends Activity {
 	ImageButton myButtonM;
 	private GoogleMap map;
-	private Marker marker_great;
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,7 +37,6 @@ public class MoodView extends Activity {
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		map.setMyLocationEnabled(true);
 		map.getUiSettings().setMyLocationButtonEnabled(true);
-		
 		try {
     		CameraUpdate center=
 			        CameraUpdateFactory.newLatLng(new LatLng(map.getMyLocation().getLatitude(),map.getMyLocation().getLongitude()));
@@ -90,10 +89,20 @@ myButtonM=(ImageButton) findViewById(R.id.map_button1);
 					Double latValueDouble=Double.parseDouble(moodObject.getString("lat"));
 					Double lonValueDouble=Double.parseDouble(moodObject.getString("lon"));
 					LatLng posLatLng = new LatLng(latValueDouble, lonValueDouble);
-					 
-					 
-					//Marker moodMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString));
-					 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
+		 
+						if(moodString.equals("great!")){
+							 Marker greatMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_great)));
+							 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
+							}else if(moodString.equals("nooo!")){
+								Marker noooMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_nooo)));
+								 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
+							}else if(moodString.equals("mixed")){
+								Marker mixedMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_mixed)));
+								 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
+							}else if(moodString.equals("surprised!")){
+								Marker surprisedMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_surprised)));
+								 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
+							}
 				 }
 	        } else {
 	            
@@ -102,8 +111,6 @@ myButtonM=(ImageButton) findViewById(R.id.map_button1);
 		}
 		});
 
-		
-		
 
 	}
 	@Override

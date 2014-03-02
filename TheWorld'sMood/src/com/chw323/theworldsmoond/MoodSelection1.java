@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MoodSelection1 extends Activity implements OnClickListener{
 	ImageButton myButtonG;
@@ -39,7 +40,7 @@ public class MoodSelection1 extends Activity implements OnClickListener{
     private Context mContext;
     private double currentLat;
     private double currentLon;
-	
+    ParseObject moodData = new ParseObject("mood");
 
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,11 +87,10 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
-						  ParseObject moodObject = new ParseObject("MoodObject");
-						  moodObject.put("mood", "great!");
-						  moodObject.put("lat",Double.toString(currentLat) );
-						  moodObject.put("lon",Double.toString(currentLon) );
-						  moodObject.saveInBackground();	
+						moodData.put("mood", "great!");
+						moodData.put("lat",Double.toString(currentLat) );
+						moodData.put("lon",Double.toString(currentLon) );
+						moodData.saveInBackground();	
 
 						Log.v("MainActivity", "Button Clicked");
 						Intent i= new Intent(MoodSelection1.this, MoodView.class);
@@ -105,11 +105,11 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
-						  ParseObject moodObject = new ParseObject("MoodObject");
-						  moodObject.put("mood", "surprised!");
-						  moodObject.put("lat",Double.toString(currentLat) );
-						  moodObject.put("lon",Double.toString(currentLon) );
-						  moodObject.saveInBackground();
+						  
+						  moodData.put("mood", "surprised!");
+						  moodData.put("lat",Double.toString(currentLat) );
+						  moodData.put("lon",Double.toString(currentLon) );
+						  moodData.saveInBackground();
 						Log.v("MainActivity", "Button Clicked");
 						Intent i= new Intent(MoodSelection1.this, MoodView.class);
 						startActivity(i);
@@ -122,11 +122,10 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
-						  ParseObject moodObject = new ParseObject("MoodObject");
-						  moodObject.put("mood", "nooo!");
-						  moodObject.put("lat",Double.toString(currentLat) );
-						  moodObject.put("lon",Double.toString(currentLon) );
-						  moodObject.saveInBackground();
+						  moodData.put("mood", "nooo!");
+						  moodData.put("lat",Double.toString(currentLat) );
+						  moodData.put("lon",Double.toString(currentLon) );
+						  moodData.saveInBackground();
 						Log.v("MainActivity", "Button Clicked");
 						Intent i= new Intent(MoodSelection1.this, MoodView.class);
 						startActivity(i);
@@ -139,11 +138,10 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
-						  ParseObject moodObject = new ParseObject("MoodObject");
-						  moodObject.put("mood", "mixed");
-						  moodObject.put("lat",Double.toString(currentLat) );
-						  moodObject.put("lon",Double.toString(currentLon) );
-						  moodObject.saveInBackground();
+						  moodData.put("mood", "mixed");
+						  moodData.put("lat",Double.toString(currentLat) );
+						  moodData.put("lon",Double.toString(currentLon) );
+						  moodData.saveInBackground();
 						Log.v("MainActivity", "Button Clicked");
 						Intent i= new Intent(MoodSelection1.this, MoodView.class);
 						startActivity(i);
@@ -157,7 +155,13 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 		
+		
+		
 	}
+	
+
+	
+}
 	
 	class GPSTracker extends Service implements LocationListener {
 
@@ -287,7 +291,7 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 	        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 
 	        // Setting Dialog Title
-	        alertDialog.setTitle("GPS is settings");
+	        alertDialog.setTitle("Oops!");
 
 	        // Setting Dialog Message
 	        alertDialog.setMessage("GPS is not enabled. Do you want to go to settings menu?");
@@ -328,8 +332,7 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 	    }
 	    
 
-	}
-	@Override
+
 	public void onBackPressed() {
 	}
 }
