@@ -37,17 +37,21 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 	ImageButton myButtonS;
 	ImageButton myButtonN;
 	ImageButton myButtonM;
+	ImageButton myButtonGC;
     private Context mContext;
     private double currentLat;
     private double currentLon;
+    private EditText greatText;
     ParseObject moodData = new ParseObject("mood");
 
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		LayoutInflater inflater =  getLayoutInflater();
-
-	    this.setContentView(R.layout.activity_main); 
+	    final View mainView = inflater.inflate(R.layout.moodselection1, null);//
+	    final View greatView = inflater.inflate(R.layout.greatwords, null);//
+		setContentView(R.layout.moodselection1);
+	    
 		super.onCreate(savedInstanceState);
 		ParseAnalytics.trackAppOpened(getIntent());
 		mContext = this.getApplicationContext();
@@ -74,29 +78,55 @@ public class MoodSelection1 extends Activity implements OnClickListener{
          }
 		
 		
-	    final View view1 = inflater.inflate(R.layout.moodselection1, null);//
-		setContentView(R.layout.moodselection1);
 		
-		myButtonG=(ImageButton) findViewById(R.id.ms_button1);
-		myButtonS=(ImageButton) findViewById(R.id.ms_button2);
-		myButtonN=(ImageButton) findViewById(R.id.ms_button3);
-		myButtonM=(ImageButton) findViewById(R.id.ms_button4);
+		myButtonG=(ImageButton) mainView.findViewById(R.id.ms_button1);
+		myButtonS=(ImageButton) mainView.findViewById(R.id.ms_button2);
+		myButtonN=(ImageButton) mainView.findViewById(R.id.ms_button3);
+		myButtonM=(ImageButton) mainView.findViewById(R.id.ms_button4);
+		myButtonGC=(ImageButton) greatView.findViewById(R.id.greatConfirm);
+		greatText=(EditText) greatView.findViewById(R.id.greatText);
 
 		
 		myButtonG.setOnClickListener(
 				new OnClickListener(){
 					@Override
 					public void onClick(View arg0){
+//						moodData.put("mood", "great!");
+//						moodData.put("lat",Double.toString(currentLat) );
+//						moodData.put("lon",Double.toString(currentLon) );
+//						moodData.saveInBackground();	
+//
+//						Log.v("MainActivity", "Button Clicked");
+//						Intent i= new Intent(MoodSelection1.this, MoodView.class);
+//						startActivity(i);
+						setContentView(R.layout.greatwords);
+						overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+					}
+				  }
+				);
+		
+		myButtonGC.setOnClickListener(
+				new OnClickListener(){
+					@Override
+					public void onClick(View arg0){
 						moodData.put("mood", "great!");
 						moodData.put("lat",Double.toString(currentLat) );
 						moodData.put("lon",Double.toString(currentLon) );
+						
+						if (greatText.getText().toString()!=null) {
+							moodData.put("moodString", greatText.getText().toString());
+						}else{
+							
+							moodData.put("moodString","Nothing special to say.");
+						}
 						moodData.saveInBackground();	
 
 						Log.v("MainActivity", "Button Clicked");
 						Intent i= new Intent(MoodSelection1.this, MoodView.class);
 						startActivity(i);
 						overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-
+						
 					}
 				  }
 				);
@@ -149,6 +179,14 @@ public class MoodSelection1 extends Activity implements OnClickListener{
 					}
 				  }
 				);
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	@Override
