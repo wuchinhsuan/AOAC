@@ -287,9 +287,12 @@ containing a value of this type.
         public static final int moodmap=0x7f030003;
         public static final int moodselection1=0x7f030004;
         public static final int name=0x7f030005;
+        public static final int surprisedwords=0x7f030006;
     }
     public static final class menu {
-        public static final int main=0x7f0b0000;
+        public static final int great_text=0x7f0b0000;
+        public static final int main=0x7f0b0001;
+        public static final int surprised_text=0x7f0b0002;
     }
     public static final class string {
         public static final int action_settings=0x7f07001b;
@@ -392,6 +395,8 @@ containing a value of this type.
         public static final int hello_how_are_you_feeling_today_=0x7f07001d;
         public static final int hello_world=0x7f07001c;
         public static final int title=0x7f07001f;
+        public static final int title_activity_great_text=0x7f070020;
+        public static final int title_activity_surprised_text=0x7f070021;
     }
     public static final class style {
         /** 

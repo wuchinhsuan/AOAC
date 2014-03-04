@@ -118,7 +118,10 @@ int layout greatwords 0x7f030002
 int layout moodmap 0x7f030003
 int layout moodselection1 0x7f030004
 int layout name 0x7f030005
-int menu main 0x7f0b0000
+int layout surprisedwords 0x7f030006
+int menu great_text 0x7f0b0000
+int menu main 0x7f0b0001
+int menu surprised_text 0x7f0b0002
 int string action_settings 0x7f07001b
 int string app_name 0x7f07001a
 int string auth_client_needs_enabling_title 0x7f070015
@@ -151,6 +154,8 @@ int string common_signin_button_text_long 0x7f070013
 int string hello_how_are_you_feeling_today_ 0x7f07001d
 int string hello_world 0x7f07001c
 int string title 0x7f07001f
+int string title_activity_great_text 0x7f070020
+int string title_activity_surprised_text 0x7f070021
 int style AppBaseTheme 0x7f0a0000
 int style AppTheme 0x7f0a0001
 int style Theme_Default 0x7f0a0002
