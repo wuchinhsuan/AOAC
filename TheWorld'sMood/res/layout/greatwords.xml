@@ -24,7 +24,8 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="What you wanna say?(140 words max)"
-        android:maxLength="140" />
+        android:maxLength="140" 
+        android:textColorLink="@color/ms1"/>
 
     <ImageButton
         android:id="@+id/greatConfirm"

@@ -85,22 +85,23 @@ myButtonM=(ImageButton) findViewById(R.id.map_button1);
 			if (e == null) {
 				 for (int i = 0; i < objects.size(); i++) {
 					 ParseObject moodObject=objects.get(i);
-					String moodString= moodObject.getString("mood");
+					String nameString= moodObject.getString("mood");
+					String moodString= moodObject.getString("moodString");
 					Double latValueDouble=Double.parseDouble(moodObject.getString("lat"));
 					Double lonValueDouble=Double.parseDouble(moodObject.getString("lon"));
 					LatLng posLatLng = new LatLng(latValueDouble, lonValueDouble);
 		 
-						if(moodString.equals("great!")){
-							 Marker greatMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_great)));
+						if(nameString.equals("great!")){
+							 Marker greatMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(nameString).snippet(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_great)));
 							 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
-							}else if(moodString.equals("nooo!")){
-								Marker noooMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_nooo)));
+							}else if(nameString.equals("nooo!")){
+								Marker noooMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(nameString).snippet(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_nooo)));
 								 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
-							}else if(moodString.equals("mixed")){
-								Marker mixedMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_mixed)));
+							}else if(nameString.equals("mixed")){
+								Marker mixedMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(nameString).snippet(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_mixed)));
 								 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
-							}else if(moodString.equals("surprised!")){
-								Marker surprisedMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_surprised)));
+							}else if(nameString.equals("surprised!")){
+								Marker surprisedMarker = map.addMarker(new MarkerOptions().position(posLatLng).title(nameString).snippet(moodString).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_surprised)));
 								 map.moveCamera(CameraUpdateFactory.newLatLngZoom(posLatLng, 16));
 							}
 				 }

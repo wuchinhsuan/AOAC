@@ -232,34 +232,40 @@ containing a value of this type.
         public static final int ic_plusone_small_off_client=0x7f02001f;
         public static final int ic_plusone_standard_off_client=0x7f020020;
         public static final int ic_plusone_tall_off_client=0x7f020021;
-        public static final int map_select=0x7f020022;
-        public static final int map_title=0x7f020023;
-        public static final int marker_great=0x7f020024;
-        public static final int marker_mixed=0x7f020025;
-        public static final int marker_nooo=0x7f020026;
-        public static final int marker_surprised=0x7f020027;
-        public static final int ms_great=0x7f020028;
-        public static final int ms_great_n=0x7f020029;
-        public static final int ms_great_p=0x7f02002a;
-        public static final int ms_mixed=0x7f02002b;
-        public static final int ms_mixed_n=0x7f02002c;
-        public static final int ms_mixed_p=0x7f02002d;
-        public static final int ms_nooo=0x7f02002e;
-        public static final int ms_nooo_n=0x7f02002f;
-        public static final int ms_nooo_p=0x7f020030;
-        public static final int ms_surprised=0x7f020031;
-        public static final int ms_surprised_n=0x7f020032;
-        public static final int ms_surprised_p=0x7f020033;
-        public static final int ms_title=0x7f020034;
-        public static final int name_confirm=0x7f020035;
-        public static final int name_input=0x7f020036;
-        public static final int word_bg=0x7f020037;
-        public static final int word_title=0x7f020038;
-        public static final int wordbutton=0x7f020039;
+        public static final int ijwts=0x7f020022;
+        public static final int ijwts_n=0x7f020023;
+        public static final int ijwts_p=0x7f020024;
+        public static final int logo=0x7f020025;
+        public static final int map_select=0x7f020026;
+        public static final int map_title=0x7f020027;
+        public static final int marker_great=0x7f020028;
+        public static final int marker_mixed=0x7f020029;
+        public static final int marker_nooo=0x7f02002a;
+        public static final int marker_surprised=0x7f02002b;
+        public static final int ms_great=0x7f02002c;
+        public static final int ms_great_n=0x7f02002d;
+        public static final int ms_great_p=0x7f02002e;
+        public static final int ms_mixed=0x7f02002f;
+        public static final int ms_mixed_n=0x7f020030;
+        public static final int ms_mixed_p=0x7f020031;
+        public static final int ms_nooo=0x7f020032;
+        public static final int ms_nooo_n=0x7f020033;
+        public static final int ms_nooo_p=0x7f020034;
+        public static final int ms_surprised=0x7f020035;
+        public static final int ms_surprised_n=0x7f020036;
+        public static final int ms_surprised_p=0x7f020037;
+        public static final int ms_title=0x7f020038;
+        public static final int name_confirm=0x7f020039;
+        public static final int name_input=0x7f02003a;
+        public static final int word_bg=0x7f02003b;
+        public static final int word_title=0x7f02003c;
+        public static final int wordbutton=0x7f02003d;
+        public static final int wordbutton_n=0x7f02003e;
+        public static final int wordbutton_p=0x7f02003f;
     }
     public static final class id {
-        public static final int action_settings=0x7f060011;
-        public static final int editText1=0x7f06000f;
+        public static final int action_settings=0x7f060012;
+        public static final int editText1=0x7f060011;
         public static final int greatConfirm=0x7f060007;
         public static final int greatText=0x7f060006;
         public static final int hybrid=0x7f060004;
@@ -267,13 +273,14 @@ containing a value of this type.
         public static final int imageView1=0x7f060008;
         public static final int map=0x7f060009;
         public static final int map_button1=0x7f06000a;
-        public static final int ms_button1=0x7f06000b;
-        public static final int ms_button2=0x7f06000c;
-        public static final int ms_button3=0x7f06000d;
-        public static final int ms_button4=0x7f06000e;
+        public static final int ms_button1=0x7f06000c;
+        public static final int ms_button2=0x7f06000d;
+        public static final int ms_button3=0x7f06000e;
+        public static final int ms_button4=0x7f06000f;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
         public static final int satellite=0x7f060002;
+        public static final int scroll_id=0x7f06000b;
         public static final int terrain=0x7f060003;
         public static final int view1=0x7f060005;
     }
@@ -284,15 +291,19 @@ containing a value of this type.
         public static final int activity_main=0x7f030000;
         public static final int great_marker=0x7f030001;
         public static final int greatwords=0x7f030002;
-        public static final int moodmap=0x7f030003;
-        public static final int moodselection1=0x7f030004;
-        public static final int name=0x7f030005;
-        public static final int surprisedwords=0x7f030006;
+        public static final int mixedwords=0x7f030003;
+        public static final int moodmap=0x7f030004;
+        public static final int moodselection1=0x7f030005;
+        public static final int name=0x7f030006;
+        public static final int nooowords=0x7f030007;
+        public static final int surprisedwords=0x7f030008;
     }
     public static final class menu {
         public static final int great_text=0x7f0b0000;
         public static final int main=0x7f0b0001;
-        public static final int surprised_text=0x7f0b0002;
+        public static final int mixed_text=0x7f0b0002;
+        public static final int nooo_text=0x7f0b0003;
+        public static final int surprised_text=0x7f0b0004;
     }
     public static final class string {
         public static final int action_settings=0x7f07001b;
@@ -396,6 +407,8 @@ containing a value of this type.
         public static final int hello_world=0x7f07001c;
         public static final int title=0x7f07001f;
         public static final int title_activity_great_text=0x7f070020;
+        public static final int title_activity_mixed_text=0x7f070023;
+        public static final int title_activity_nooo_text=0x7f070022;
         public static final int title_activity_surprised_text=0x7f070021;
     }
     public static final class style {

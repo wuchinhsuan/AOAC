@@ -62,6 +62,14 @@
             android:name="com.chw323.theworldsmoond.SurprisedText"
             android:label="@string/title_activity_surprised_text" >
         </activity>
+        <activity
+            android:name="com.chw323.theworldsmoond.NoooText"
+            android:label="@string/title_activity_nooo_text" >
+        </activity>
+        <activity
+            android:name="com.chw323.theworldsmoond.MixedText"
+            android:label="@string/title_activity_mixed_text" >
+        </activity>
     </application>
 
     <uses-feature

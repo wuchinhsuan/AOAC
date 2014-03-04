@@ -13,5 +13,7 @@
     <string name="title">title</string>
     <string name="title_activity_great_text">GreatText</string>
     <string name="title_activity_surprised_text">SurprisedText</string>
+    <string name="title_activity_nooo_text">NoooText</string>
+    <string name="title_activity_mixed_text">MixedText</string>
 
 </resources>

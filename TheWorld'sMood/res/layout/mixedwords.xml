@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_surprised"
+    android:background="@drawable/bg_mixed"
     android:orientation="vertical" >
 
     <View
@@ -24,8 +24,8 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="What you wanna say?(140 words max)"
-        android:maxLength="140" 
-        android:textColorLink="@color/ms1"/>
+        android:maxLength="140"
+        android:textColorLink="@color/ms1" />
 
     <ImageButton
         android:id="@+id/greatConfirm"
